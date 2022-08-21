@@ -37,7 +37,7 @@ In this demonstration we attempt to provided step by step approach for each of t
 ### Architecture diagram
 
 ### Step by Step Instruction
-      1. use the [Pyspark job](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/pyspark_atlastoredshift_customeractivity.py) to move the data from Atlas to Redshift.
+Use the [Pyspark job](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/pyspark_atlastoredshift_customeractivity.py) template to move the data from Atlas to Redshift.
 
 
 ##  Data Streaming
