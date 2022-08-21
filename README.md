@@ -23,7 +23,7 @@ The data from/to MongoDB Atlas can be migrated in two step approach
 Step 1: One-Time Load
 MongoDB Atlas has direct connectors with  Apache Spark. Using the spark connectors the data is migrated from MongoDB Atlas to Redshift at one time
 
-Step2: Data Streaming or Real-Time Data
+Step2: Real-Time Data Sync
 With the help of the MongoDB Atlas triggers, the data changes in the database can be continuously written to S3 bucket.
 From the S3 bucket data can be loaded into the Redshift either through schedule AWS Glue jobs or can be accessed as an external tables.
 
@@ -36,14 +36,23 @@ In this demonstration we attempt to provided step by step approach for each of t
 
 ### Architecture diagram
 
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/01.One-Time%20Data%20Load.png)
+
 ### Step by Step Instruction
 Use the [Pyspark job](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/pyspark_atlastoredshift_customeractivity.py) template to move the data from Atlas to Redshift.
 
 
-##  Data Streaming
+##  Real-Time Data Sync 
+
+### Architecture diagram 
+
+#### With Glue: 
 
 
-### Architecture diagram
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/02.Data-Stream-with%20Glue.png)
+
+#### with Redshift Spectrum (External Table)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/03.Data-Stream-with%20Redshift%20Spectrum.png)
 
 ### Step by Step Instruction
       1. Create a Atlas Federated Database using the Data Federation menu
