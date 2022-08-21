@@ -149,6 +149,7 @@ Redshift Spectrum host the S3 bucket data as an external table. Provided the ref
 
 [Redshift Specturm - external table](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/RedshiftML_for_CustomerActivity.sql)
 
+Reference [link](https://docs.aws.amazon.com/redshift/latest/dg/tutorial-query-nested-data.html) for querying JSON structure data in Redshift.
 
 The above steps also explain the steps to train the model using the Redshift ML services. 
 
