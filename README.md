@@ -29,6 +29,13 @@ From the S3 bucket data can be loaded into the Redshift either through schedule 
 
 In this demonstration we attempt to provided step by step approach for each of these scenarios.
 
+## Pre-requisite: 
+a) Good understanding of AWS Redshift , Glue and S3 services
+b) Good understanding of MongoDB Atlas and Application services
+c) VPC and Network settings are already setup as per the secuirty standards.
+c) Redshift Database 
+d) S3 bucket to store the json files
+e) MongoDB Atlas cluster [for free cluster creation](https://www.mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster/)
 
 
 
@@ -40,8 +47,6 @@ In this demonstration we attempt to provided step by step approach for each of t
 
 ### Step by Step Instruction
 Use the [Pyspark job](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/pyspark_atlastoredshift_customeractivity.py) template to move the data from Atlas to Redshift.
-
-Once the data is loaded completely the real-time data sync is enabled.
 
 
 
