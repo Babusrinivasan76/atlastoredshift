@@ -97,7 +97,7 @@ Test these connections are working fine.
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%204.png)
 
 C.Create the Crawler to populate Database and Tables in AWS Glue Catalog from S3.
-Navigate to "Crawler" menu on the left side panel and click "Add Crawler". Add all the required information for the crawler taking guidance from the attached screenshots.
+Navigate to "Crawlers" menu on the left side panel and click "Add Crawler". Add all the required information for the crawler taking guidance from the attached screenshots.
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%201.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%202.png)
@@ -108,21 +108,38 @@ Navigate to "Crawler" menu on the left side panel and click "Add Crawler". Add a
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%207.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%208.png)
 
-Once the crawlers are created successfully , run the crawler and ensure the tables are created successfully.
+Once the crawlers are created successfully , run the crawler and ensure its successful completion.
+
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%2010.png)
+
+Click the "Tables" menu from the left side and ensure the required tables are created. 
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%209.png)
 
-c.Now we are all set to create the Job to map and populate the redshift tables.
+c.Now we are all set to create the Job to map and populate the redshift tables. Click " Jobs (legacy)" from the left side menu and click "Add job". Fill all the information required for creating the job, by taking the reference from screenshots attached.
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2001.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2002.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2003.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2004.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2005.png)
+
+Select the option of creating a new table in the destination. Select the Redshift connection and the Database name you already created in the Redshift (as part of the pre-requisite).
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2006.png)
+
+Validate the mapping and alter as required.
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2007.png)
+
+The scripts for the conversions are created automatically and allowed for edit. Change the Redshift database table name to customer_activity.
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2008.png)
+
+Run the job and ensure it's successful completion. Use the logs and Error logs generated for debugging. (if required)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2009.png)
+
+Verify the data is populated successfully in the Redshift table.
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2010.png)
 
 ### Step by Step Instruction for setting up Redshift Spectrum - External Table
