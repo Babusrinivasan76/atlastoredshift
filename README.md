@@ -20,10 +20,10 @@ Thus the coexistence of Atlas and Redshift evolves as the perfect fit for the bu
 
 The data from/to MongoDB Atlas can be migrated in two step approach
 
-Step 1: One-Time Load
+### Step 1: One-Time Load
 MongoDB Atlas has direct connectors with  Apache Spark. Using the spark connectors the data is migrated from MongoDB Atlas to Redshift at one time
 
-Step2: Real-Time Data Sync
+### Step2: Real-Time Data Sync
 With the help of the MongoDB Atlas triggers, the data changes in the database can be continuously written to S3 bucket.
 From the S3 bucket data can be loaded into the Redshift either through schedule AWS Glue jobs or can be accessed as an external tables.
 
@@ -66,25 +66,40 @@ The Change Data Capture feature of MongoDB Atlas is utilized to capture the real
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/03.Data-Stream-with%20Redshift%20Spectrum.png)
 
 
-### Step by Step Instruction
-      1. The data from MongoDB Atlas can be continuously written to S3 bucket using the Data Federation and MongoDB Atlas triggers. 
-         Please refer the [link](https://www.mongodb.com/developer/products/atlas/automated-continuous-data-copying-from-mongodb-to-s3/) for the step by step instructions to capture the data to S3.
-	 
-	 For any further reference , please follow the MongoDB documentation [link](https://www.mongodb.com/docs/atlas/data-federation/config/config-aws-s3/)
-    
-      2. create a AWS Glue job to move the data from S3 bucket to AWS Redshift
+### Step by Step Instruction for setting up Glue Job
+1. The data from MongoDB Atlas can be continuously written to S3 bucket using the Data Federation and MongoDB Atlas triggers. 
+ Please refer the [link](https://www.mongodb.com/developer/products/atlas/automated-continuous-data-copying-from-mongodb-to-s3/) for the step by step instructions to capture the data to S3.
+
+ For any further reference , please follow the MongoDB documentation [link](https://www.mongodb.com/docs/atlas/data-federation/config/config-aws-s3/)
+
+2. create a AWS Glue job to move the data from S3 bucket to AWS Redshift
       
-      	a. Create the Glue Connections
-	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/05.AWS%20Glue%20Redshift%20Connections%201.png)
-	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/06.AWS%20Glue%20Redshift%20Connections%202.png)
-	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/07.AWS%20Glue%20Redshift%20Connections%203.png)
-	
-    S3 access to Redshift - Best suited for accessing reference data.
-    
-      1. Create an external table with the Redshift specturm feature 
-     
+a. Create the Glue Connections
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/05.AWS%20Glue%20Redshift%20Connections%201.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/06.AWS%20Glue%20Redshift%20Connections%202.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/07.AWS%20Glue%20Redshift%20Connections%203.png)
+
+b.Create the Crawler
+
+c.Create the Job and run the job
+
+d.Set up the triggers for the job
+
+
+### Step by Step Instruction for setting up Redshift Spectrum - External Table
+
+Redshift Spectrum host the S3 bucket data as an external table. Provided the reference and steps to create the extenal table in the following link
+
+[Redshift Specturm - external table](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/RedshiftML_for_CustomerActivity.sql)
+
+## Business Use Cases:
+Enterprises like Retail, Banking & Finance and Manufacturing are in great demand for the operational analytics for it's various real-time analytics.
+A few are captured below
+
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/04.Key%20Business%20Use%20Cases.png)
+
 ## Summary: 
-	With the synergy it creates by having Atlas for its operational efficiency and Redshift for its DWH excellence, all the “Operational Analytics” use cases can be delivered in no time. The solution can be extended to integrate the AI/ML needs using the AWS SageMaker.
-  
- For any further reference pls reach out to partners@mongodb.com
+With the synergy it creates by having Atlas for its operational efficiency and Redshift for its DWH excellence, all the “Operational Analytics” use cases can be delivered in no time. The solution can be extended to integrate the AI/ML needs using the AWS SageMaker.
+
+Hope you are able to setup the integration successfully. For any further reference pls reach out to partners@mongodb.com
 
