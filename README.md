@@ -97,6 +97,7 @@ Test these connections are working fine.
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%204.png)
 
 C.Create the Crawler to populate Database and Tables in AWS Glue Catalog from S3.
+Navigate to "Crawler" menu on the left side panel and click "Add Crawler". Add all the required information for the crawler taking guidance from the attached screenshots.
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%201.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%202.png)
@@ -107,7 +108,12 @@ C.Create the Crawler to populate Database and Tables in AWS Glue Catalog from S3
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%207.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%208.png)
 
-c.Create the Job and run the job
+Once the crawlers are created successfully , run the crawler and ensure the tables are created successfully.
+
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%209.png)
+
+c.Now we are all set to create the Job to map and populate the redshift tables.
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2001.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2002.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2003.png)
