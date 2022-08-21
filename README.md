@@ -147,11 +147,16 @@ Verify the data is populated successfully in the Redshift table.
 
 Redshift Spectrum host the S3 bucket data as an external table. Provided the reference and steps to create the extenal table in the following link
 
-[Redshift Specturm - external table](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/RedshiftML_for_CustomerActivity.sql)
+[Redshift Specturm - external table](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/external_tables_in_redshift.sql)
 
 Reference [link](https://docs.aws.amazon.com/redshift/latest/dg/tutorial-query-nested-data.html) for querying JSON structure data in Redshift.
 
-The above steps also explain the steps to train the model using the Redshift ML services. 
+
+## Analytical Services using Redshift ML.
+
+The data thus populated from MongoDB Atlas either through AWS Glue or as a external tables in Redshift can be utilized to train the models . Redshift ML services enables to directly use the Sagemaker Models to train and infer results.
+
+Please refer the [link](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/RedshiftML_for_CustomerActivity.sql) for training a model and infer result from the model.
 
 
 
