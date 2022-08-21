@@ -41,30 +41,44 @@ In this demonstration we attempt to provided step by step approach for each of t
 ### Step by Step Instruction
 Use the [Pyspark job](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/Scripts/pyspark_atlastoredshift_customeractivity.py) template to move the data from Atlas to Redshift.
 
+Once the data is loaded completely the real-time data sync is enabled.
+
+
 
 ##  Real-Time Data Sync 
 
+
+The Change Data Capture feature of MongoDB Atlas is utilized to capture the real-time data. Utilizing the Atlas Application Services and Data Federation's $out feature to write to S3 bucket, we capture the change data to S3 continuously.
+
+
 ### Architecture diagram 
+
 
 #### With Glue: 
 
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/02.Data-Stream-with%20Glue.png)
 
+
 #### with Redshift Spectrum (External Table)
+
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/03.Data-Stream-with%20Redshift%20Spectrum.png)
 
+
 ### Step by Step Instruction
-      1. Create a Atlas Federated Database using the Data Federation menu
-      
-      2. Create the Atlas functions to write to the S3 bucket
-      
-      3. Create a Trigger and attach the functions
-      
-    Data Streaming via AWS Glue jobs - Best suited for a high frequency streaming data
+      1. The data from MongoDB Atlas can be continuously written to S3 bucket using the Data Federation and MongoDB Atlas triggers. 
+         Please refer the [link](https://www.mongodb.com/developer/products/atlas/automated-continuous-data-copying-from-mongodb-to-s3/) for the step by step instructions to capture the data to S3.
+	 
+	 For any further reference , please follow the MongoDB documentation [link](https://www.mongodb.com/docs/atlas/data-federation/config/config-aws-s3/)
     
-      1. create a AWS Glue job to move the data from S3 bucket to AWS Redshift
+      2. create a AWS Glue job to move the data from S3 bucket to AWS Redshift
       
+      	a. Create the Glue Connections
+	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/05.AWS%20Glue%20Redshift%20Connections%201.png)
+	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/06.AWS%20Glue%20Redshift%20Connections%202.png)
+	![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/07.AWS%20Glue%20Redshift%20Connections%203.png)
+	
     S3 access to Redshift - Best suited for accessing reference data.
     
       1. Create an external table with the Redshift specturm feature 
