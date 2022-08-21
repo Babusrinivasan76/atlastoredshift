@@ -16,7 +16,7 @@ spark = SparkSession.\
 
 #connection to the standar mongodb in atlas
 rdd=(spark.read.format("mongodb")
-        .option('spark.mongodb.connection.uri', 'mongodb+srv://s3load:s3load@s3load.frzascf.mongodb.net/?retryWrites=true&w=majority') \
+        .option('spark.mongodb.connection.uri', 'mongodb+srv://<username>:<password>@<servername>/?retryWrites=true&w=majority') \
         .option('spark.mongodb.database', 'customer_activity') \
         .option('spark.mongodb.collection', 'source') \
 .option('spark.mongodb.change.stream.publish.full.document.only','true') \
@@ -25,8 +25,8 @@ rdd=(spark.read.format("mongodb")
 
 ## write the dataframe to Redshift
 rdd.write.format('jdbc').options(
-        url='jdbc:redshift://partner-demo-redshift1.crzprzf2wp5s.us-east-1.redshift.amazonaws.com:5439/dev',
+        url='jdbc:redshift://<redshift endpoint>:5439/<databasename>',
         driver='com.amazon.redshift.jdbc42.Driver',
         dbtable='public.customer_activity',
-        user='awsuser',
-        password='Password123').mode('append').save()
+        user='<username>',
+        password='<password>').mode('append').save()
