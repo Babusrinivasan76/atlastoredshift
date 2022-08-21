@@ -122,21 +122,22 @@ c.Now we are all set to create the Job to map and populate the redshift tables. 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2002.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2003.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2004.png)
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2005.png)
 
 Select the option of creating a new table in the destination. Select the Redshift connection and the Database name you already created in the Redshift (as part of the pre-requisite).
 
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2006.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2005.png)
 
 Validate the mapping and alter as required.
 
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2007.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2006.png)
 
 The scripts for the conversions are created automatically and allowed for edit. Change the Redshift database table name to customer_activity.
 
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2008.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2007.png)
 
 Run the job and ensure it's successful completion. Use the logs and Error logs generated for debugging. (if required)
+
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2008.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/09.AWS%20Glue%20Job%2009.png)
 
 Verify the data is populated successfully in the Redshift table.
