@@ -83,4 +83,4 @@ SELECT  phone,state,
 FROM customer_activity
 WHERE   state = 'SB'   -- customize with your value to be validated.
 
-*********
+---*********
