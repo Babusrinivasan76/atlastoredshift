@@ -3,8 +3,8 @@
 
 ## Introduction
 
-The modern business world demands expedited decision-making, improved customer experience, and increased productivity. Gone are those days when business intelligence relied heavily on past data through batch processing. 
-The order of the day is Operational analytics, which relies on measuring the existing or real-time operations of the business along with its data warehouse.
+The modern business world demands expedited decision-making, improved customer experience, and increased productivity. Gone are those days when business intelligence relied only on past data through batch processing. 
+The order of the day is Operational analytics, which relies on measuring the existing or real-time operations of the business along with its past datatrends.
 
 ## Why Operational Analytics?
 First and foremost there is an exponential increase in data volumes and their varieties. Traditional DW needs to evolve constantly to meet this demand of changing needs.
@@ -74,18 +74,24 @@ The Change Data Capture feature of MongoDB Atlas is utilized to capture the real
 
 2. create a AWS Glue job to move the data from S3 bucket to AWS Redshift
       
-a. Create the Glue Connections for Redshift
+a. Create the Glue Connections Redshift Database.
+
+Navigate to the AWS Glue console and to the "Data Catalog" menu on the left panel. Select "Connections" and Click on "Add Connection".  Enter the parameters taking  guidance of the screenshots attached. 
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/05.AWS%20Glue%20Redshift%20Connections%201.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/06.AWS%20Glue%20Redshift%20Connections%202.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/07.AWS%20Glue%20Redshift%20Connections%203.png)
 
-b.Create the Glue Connection for S3 bucket
+b.Create the Glue Connection for S3 bucket.
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%201.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%202.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%203.png)
+
+Test these connections are working fine. 
+
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/10.AWS%20Glue%20s3tocatalog%20Connections%204.png)
 
-C.Create the Crawler to populate Database and Tables in AWS Glue Catalog from S3
+C.Create the Crawler to populate Database and Tables in AWS Glue Catalog from S3.
 
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%201.png)
 ![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/08.AWS%20Glue%20Redshift%20Crawler%202.png)
