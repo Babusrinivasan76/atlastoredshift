@@ -1,9 +1,16 @@
---REFERENCE: https://docs.aws.amazon.com/redshift/latest/dg/tutorial_customer_churn.html
+--REFERENCE: https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html
 
-The below step can be ommitted, if the table is already created throught one-time load process.
+--Setup the required roles and permissions
+
+create external schema myspectrum_schema 
+from data catalog 
+database 'myspectrum_db' 
+iam_role 'arn:aws:iam::123456789012:role/<role name>'
+create external database if not exists;
 
 -- CUSTOMER ACTIVITY TABLE CREATION
-CREATE TABLE customer_activity (
+create external table myspectrum_schema.customer_activity (
+_id varchar(2),
 state varchar(2), 
 account_length int, 
 area_code int,
@@ -26,14 +33,16 @@ intl_calls int,
 intl_charge float, 
 cust_serv_calls int, 
 churn varchar(6),
-record_date date);
+record_date date)
+stored as PARQUET
+location 's3://partner-demo/glue/customer_activity/backup/customer_activity.json';
+
 
 -- CHECK THE TABLE STRUCTURE AND ENSURE NO DATA IS AVAILABLE.
-select * from customer_activity;
+select * from myspectrum_schema.customer_activity;
 
--- COPY THE DATA FROM S3 BUCKET
-COPY customer_activity
-FROM 's3://partner-demo/glue/customer-activity/data/customer_activity.json' -- change it with your bucket 
-REGION 'us-east-1' IAM_ROLE default -- replace with your role name.
-format as json 'auto';
+
+-- Create a View combine  the customer_activity data from both the schema for further analytics.
+
+
 
