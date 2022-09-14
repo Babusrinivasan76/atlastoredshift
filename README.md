@@ -62,13 +62,13 @@ The Change Data Capture feature of MongoDB Atlas is utilized to capture the real
 #### With Glue: 
 
 
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/02.Data-Stream-with%20Glue.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/11.AWS%20Glue%20s3tocatalog%20Connections%204.png)
 
 
 #### with Redshift Spectrum (External Table)
 
 
-![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/03.Data-Stream-with%20Redshift%20Spectrum.png)
+![](https://github.com/Babusrinivasan76/atlastoredshift/blob/main/images/12.AWS%20Glue%20s3tocatalog%20Connections%204.png)
 
 
 ### Step by Step Instruction for setting up Glue Job
