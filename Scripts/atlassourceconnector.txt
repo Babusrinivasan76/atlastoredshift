@@ -1,0 +1,13 @@
+connector.class=com.mongodb.kafka.connect.MongoSourceConnector
+publish.full.document.only=true
+output.schema.infer.value=true
+tasks.max=1
+output.format.value=schema
+collection=<collectionname>
+output.format.key=schema
+key.converter.schemas.enable=false
+database=<databasename>
+connection.uri=mongodb+srv://<Mongodbatlasserver>
+value.converter.schemas.enable=false
+value.converter=org.apache.kafka.connect.json.JsonConverter
+key.converter=org.apache.kafka.connect.storage.StringConverter
